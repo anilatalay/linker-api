@@ -6,7 +6,14 @@ const linkSchema = new Schema({
     type: String,
     required: true
   },
-  createdAt: {
+  url: {
+    type: String
+  },
+  createdDate: {
+    type: Date,
+    default: Date.now
+  },
+  updatedDate: {
     type: Date,
     default: Date.now
   }
