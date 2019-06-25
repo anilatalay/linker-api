@@ -15,6 +15,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const link = await linkModdel.findById(id);
+
+    if (!link) {
+      res.json(extension.return.notfoundResult(null, "Link was not found."));
+    } else {
+      res.json(extension.return.successResult(link));
+    }
+  } catch (err) {
+    res.json(extension.return.errorResult(err, "error"));
+  }
+});
+
 router.post("/", async (req, res) => {
   const { title } = req.body;
 
