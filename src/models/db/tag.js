@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const linkSchema = new Schema({
+const tagSchema = new Schema({
   title: {
     type: String
   },
-  url: {
-    type: String,
-    required: true
+  name: {
+    type: String
   },
   createdDate: {
     type: Date,
@@ -19,4 +18,4 @@ const linkSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("link", linkSchema);
+module.exports = mongoose.model("tag", tagSchema);
