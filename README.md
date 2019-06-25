@@ -12,6 +12,7 @@ soon
 
 ## Tags
 
-| HTTP  | Route     | Header | Body | Description    |
-| ----- | --------- | ------ | ---- | -------------- |
-| `GET` | /api/tags |        |      | List all tags. |
+| HTTP  | Route         | Header | Body | Description    |
+| ----- | ------------- | ------ | ---- | -------------- |
+| `GET` | /api/tags     |        |      | List all tags. |
+| `GET` | /api/tags/:id |        |      | Get a tag.     |

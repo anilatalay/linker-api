@@ -14,4 +14,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const tag = await tagModdel.findById(id);
+
+    if (!tag) {
+      res.json(extension.return.notfoundResult(null, "Tag was not found."));
+    } else {
+      res.json(extension.return.successResult(link));
+    }
+  } catch (err) {
+    res.json(extension.return.errorResult(err, "error"));
+  }
+});
+
 module.exports = router;
